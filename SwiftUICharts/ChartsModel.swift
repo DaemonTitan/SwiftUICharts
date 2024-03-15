@@ -11,6 +11,7 @@ struct ChartsModels: Identifiable {
     let id = UUID()
     let type: String
     let value: Double
+    var animation = false
     
     init(type: String, value: Double) {
         self.type = type

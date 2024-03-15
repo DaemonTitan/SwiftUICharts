@@ -10,6 +10,8 @@ import Charts
 
 struct LineCharts: View {
     
+    @State var isAnimate = false
+    
     let itemValue: [ChartsModels] = [
         ChartsModels(type: "Jan", value: 100),
         ChartsModels(type: "Feb", value: 35),
@@ -99,6 +101,12 @@ struct LineCharts: View {
                     )
                    
                 }
+                .onAppear {
+                    withAnimation(.linear) {
+                        isAnimate.toggle()
+                    }
+                }
+                
                 .foregroundStyle(Color.blue.gradient)
                 .frame(height: 200)
                 .padding()
